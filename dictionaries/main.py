@@ -16,3 +16,19 @@ for line in handle:
         di[w] = di.get(w, 0) + 1
 
 print(di)
+
+# This creates a list of tuples that can be sorted.
+# y = sorted(di.items())
+# print(y)
+
+# this sorts the tuples as per the values so that one can identify the most used word
+temp = list()
+for k, v in di.items():
+    newtup = (v, k)
+    temp.append(newtup)
+    # the , reverse=True sorts from most used words to the least used
+temp = (sorted(temp, reverse=True))
+
+# if I want to know 5 of the most used words
+for v, k in temp[:5]:
+    print(k,v)
