@@ -10,13 +10,9 @@ di = dict()
 for line in handle:
     words = line.rstrip()
     wds = words.split()
-    print(wds)
+    # print(wds)
     for w in wds:
-        # adding the words in the list into the dictionary both new and existing
-        if w in di:
-            # if the word exist the value is added
-            di[w] = di[w]+1
-        else:
-            # if the word is new is assigned the value 1
-            di[w] = 1
+        # this idiom simplifies the process of adding keys and values in the dictionary.
+        di[w] = di.get(w, 0) + 1
+
 print(di)
